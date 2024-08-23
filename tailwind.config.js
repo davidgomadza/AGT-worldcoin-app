@@ -6,7 +6,11 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'bg': '#E4E4E4',        
+      },
+    }
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }

@@ -2,11 +2,13 @@
 
 import { VerificationLevel, IDKitWidget, useIDKit } from "@worldcoin/idkit";
 import type { ISuccessResult } from "@worldcoin/idkit";
+import { useRouter } from "next/navigation";
 import { verify } from "./actions/verify";
 
 export default function Home() {
   const app_id = process.env.NEXT_PUBLIC_WLD_APP_ID as `app_${string}`;
   const action = process.env.NEXT_PUBLIC_WLD_ACTION;
+  const router = useRouter();
 
   if (!app_id) {
     throw new Error("app_id is not set in environment variables!");
@@ -18,11 +20,11 @@ export default function Home() {
   const { setOpen } = useIDKit();
 
   const onSuccess = (result: ISuccessResult) => {
-    // This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
     window.alert(
       "Successfully verified with World ID! Your nullifier hash is: " +
         result.nullifier_hash
     );
+    router.push("/home");
   };
 
   const handleProof = async (result: ISuccessResult) => {
@@ -47,7 +49,7 @@ export default function Home() {
           app_id={app_id}
           onSuccess={onSuccess}
           handleVerify={handleProof}
-          verification_level={VerificationLevel.Orb} // Change this to VerificationLevel.Device to accept Orb- and Device-verified users
+          verification_level={VerificationLevel.Device}
         />
         <button
           className="border border-black rounded-md"
