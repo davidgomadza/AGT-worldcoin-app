@@ -24,7 +24,7 @@ export default function Home() {
       "Successfully verified with World ID! Your nullifier hash is: " +
         result.nullifier_hash
     );
-    router.push("/home");
+    router.push("/quiz");
   };
 
   const handleProof = async (result: ISuccessResult) => {
