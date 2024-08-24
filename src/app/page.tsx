@@ -20,9 +20,10 @@ export default function Home() {
   const { setOpen } = useIDKit();
 
   const onSuccess = (result: ISuccessResult) => {
+    // This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
     window.alert(
       "Successfully verified with World ID! Your nullifier hash is: " +
-        result.nullifier_hash
+      result.nullifier_hash
     );
     router.push("/quiz");
   };
@@ -42,17 +43,17 @@ export default function Home() {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center align-middle h-screen">
-        <p className="text-2xl mb-5">World ID Cloud Template</p>
+      <div className="flex flex-col items-center justify-center align-middle h-screen bg-bg">
+        <p className="text-2xl mb-5 text-black text-center">Verify that you're human to get rewards</p>
         <IDKitWidget
           action={action}
           app_id={app_id}
           onSuccess={onSuccess}
           handleVerify={handleProof}
-          verification_level={VerificationLevel.Device}
+          verification_level={VerificationLevel.Device} // Change this to VerificationLevel.Device to accept Orb- and Device-verified users
         />
         <button
-          className="border border-black rounded-md"
+          className="border border-black rounded-md text-black"
           onClick={() => setOpen(true)}
         >
           <div className="mx-3 my-1">Verify with World ID</div>

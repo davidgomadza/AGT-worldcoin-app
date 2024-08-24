@@ -22,9 +22,9 @@ const Quiz: React.FC = () => {
       </button>
       <button
         className="btn btn-black text-white w-64 mb-4"
-        onClick={() => handleSelection('basketball')}
+        onClick={() => handleSelection('burger')}
       >
-        Basketball
+        Burgers
       </button>
       <button
         className="btn btn-black text-white w-64 mb-4"
