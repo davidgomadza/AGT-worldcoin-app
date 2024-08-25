@@ -38,7 +38,7 @@ const Win: React.FC = () => {
                 className="btn bg-btn text-btn-blue w-64 mb-4 shadow-lg"
                 onClick={handleSelection}
             >
-                Claim
+                Coming soon...
             </button>
         </div>
     );

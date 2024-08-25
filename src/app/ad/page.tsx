@@ -18,7 +18,7 @@ const AdContent: React.FC = () => {
     return (
         <div className="flex flex-col justify-center items-center h-screen bg-bg text-center">
             <h1 className="text-2xl font-bold mb-8 text-white">
-                Watch an advertisement to win a prize
+                Watch an advertisement to participate in a game
             </h1>
             <button className="btn bg-btn text-btn-blue w-64 mb-4 shadow-lg" onClick={handleWatchAd}>
                 Next

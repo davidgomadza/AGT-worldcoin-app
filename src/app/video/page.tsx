@@ -6,7 +6,7 @@ export default function VideoPage() {
   const router = useRouter();
 
   const handleContinue = () => {
-    router.push('/win');
+    router.push('/question');
   };
 
   return (
