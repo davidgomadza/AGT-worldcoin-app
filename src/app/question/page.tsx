@@ -8,7 +8,7 @@ const Quiz: React.FC = () => {
   const router = useRouter();
 
   const handleSelection = (choice: string) => {
-    router.push(`/ad?choice=${choice}`);
+    router.push(`/win`);
   };
 
   return (

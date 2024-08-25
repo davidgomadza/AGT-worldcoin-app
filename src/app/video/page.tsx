@@ -6,23 +6,24 @@ export default function VideoPage() {
   const router = useRouter();
 
   const handleContinue = () => {
-    router.push('/discount');
+    router.push('/win');
   };
 
   return (
     <div className="flex flex-col justify-center items-center h-screen p-4 bg-bg">
-      <div className="w-full max-w-xs"> {/* Narrow container for vertical video */}
-        <div className="relative pt-[177.78%] mb-4"> {/* This gives a 9:16 aspect ratio */}
+      <div className="w-full h-[80vh] mb-4 max-w-md"> {/* Container takes 80% of the viewport height */}
+        <div className="relative w-full h-full"> {/* Full width and height for the iframe */}
           <iframe
             className="absolute top-0 left-0 w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/6Pjw7uFmJDg"
-            title="YouTube video player"
+            src="https://www.instagram.com/reel/C-2-mPopeGE/embed"
+            title="Instagram video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            frameBorder="0"
           ></iframe>
         </div>
       </div>
-      <button className="btn btn-black text-white w-full max-w-xs" onClick={handleContinue}>
+      <button className="btn bg-btn text-btn-blue w-64 mb-4 shadow-lg" onClick={handleContinue}>
         Continue
       </button>
     </div>

@@ -1,8 +1,10 @@
-"use client";
+'use client';
 
+import React from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { VerificationLevel, IDKitWidget, useIDKit } from "@worldcoin/idkit";
 import type { ISuccessResult } from "@worldcoin/idkit";
-import { useRouter } from "next/navigation";
 import { verify } from "./actions/verify";
 
 export default function Home() {
@@ -20,45 +22,63 @@ export default function Home() {
   const { setOpen } = useIDKit();
 
   const onSuccess = (result: ISuccessResult) => {
-    // This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
     window.alert(
       "Successfully verified with World ID! Your nullifier hash is: " +
       result.nullifier_hash
     );
-    router.push("/quiz");
+    router.push("/home");
   };
 
   const handleProof = async (result: ISuccessResult) => {
     console.log(
       "Proof received from IDKit, sending to backend:\n",
       JSON.stringify(result)
-    ); // Log the proof from IDKit to the console for visibility
+    );
     const data = await verify(result);
     if (data.success) {
-      console.log("Successful response from backend:\n", JSON.stringify(data)); // Log the response from our backend for visibility
+      console.log("Successful response from backend:\n", JSON.stringify(data));
     } else {
       throw new Error(`Verification failed: ${data.detail}`);
     }
   };
 
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center align-middle h-screen bg-bg">
-        <p className="text-2xl mb-5 text-black text-center">Verify that you're human to get rewards</p>
-        <IDKitWidget
-          action={action}
-          app_id={app_id}
-          onSuccess={onSuccess}
-          handleVerify={handleProof}
-          verification_level={VerificationLevel.Device} // Change this to VerificationLevel.Device to accept Orb- and Device-verified users
-        />
-        <button
-          className="border border-black rounded-md text-black"
-          onClick={() => setOpen(true)}
-        >
-          <div className="mx-3 my-1">Verify with World ID</div>
-        </button>
-      </div>
+    <div className="flex flex-col justify-center items-center h-screen bg-bg">
+      <Image
+        src="/images/ad.svg"
+        alt="Ad Image"
+        width={150}
+        height={150}
+        className="mb-6"
+      />
+      <Image
+        src="/images/cube.svg"
+        alt="Cube Image"
+        width={150}
+        height={150}
+        className="mb-6"
+      />
+      <Image
+        src="/images/verify.svg"
+        alt="Start Image"
+        width={300}
+        height={300}
+        className="mb-2"
+      />
+      
+      <IDKitWidget
+        action={action}
+        app_id={app_id}
+        onSuccess={onSuccess}
+        handleVerify={handleProof}
+        verification_level={VerificationLevel.Device}
+      />
+      <button
+        className="btn bg-btn text-btn-blue w-64 mb-4 shadow-lg mt-4"
+        onClick={() => setOpen(true)}
+      >
+        Verify with World ID
+      </button>
     </div>
   );
 }

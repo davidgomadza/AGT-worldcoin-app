@@ -9,9 +9,9 @@ const DiscountContent: React.FC = () => {
   const choice = searchParams.get('choice');
 
   const getDiscountMessage = () => {
-    if (choice === 'football' || choice === 'basketball') {
+    if (choice === 'sports') {
       return 'Congratulations! You have earned a 10% discount at Adidas.';
-    } else if (choice === 'movies') {
+    } else if (choice === 'art') {
       return 'Congratulations! You have earned 1 month of free Netflix.';
     }
     return 'Congratulations! You have earned a special discount!';
