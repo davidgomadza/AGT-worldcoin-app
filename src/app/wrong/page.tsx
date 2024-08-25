@@ -14,32 +14,13 @@ const Win: React.FC = () => {
     return (
         <div className="flex flex-col justify-center items-center h-screen bg-bg">
             <Image
-                src="/images/yay.svg"
+                src="/images/clock.svg"
                 alt="logo"
                 width={200}
                 height={200}
                 className="mb-6" // Margin bottom added
             />
-            <Image
-                src="/images/stars.svg"
-                alt="logo"
-                width={200}
-                height={200}
-                className="mb-2" // Margin bottom added
-            />
-            <Image
-                src="/images/win.svg"
-                alt="logo"
-                width={300}
-                height={300}
-                className="mb-8" // Larger margin bottom added for more spacing
-            />
-            <button
-                className="btn bg-btn text-btn-blue w-64 mb-4 shadow-lg"
-                onClick={handleSelection}
-            >
-                Claim
-            </button>
+                    <h1 className="text-4xl text-yellow-500">Try again later</h1> 
         </div>
     );
 };
