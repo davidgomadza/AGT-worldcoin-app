@@ -18,7 +18,7 @@ export default function LandingPage() {
       {/* Header Section */}
       <header className="py-6 bg-gradient-to-r from-black to-gray-800 text-white">
         <div className="container mx-auto flex justify-between items-center px-4">
-          <h1 className="text-4xl font-bold">Proof of Audience</h1>
+          <h1 className="text-4xl font-bold">Ad Game</h1>
           <nav>
             <ul className="flex space-x-4">
               <li><a href="#features" className="hover:underline">Features</a></li>
@@ -51,7 +51,7 @@ export default function LandingPage() {
       {/* Features Section */}
       <section id="features" className="py-20 bg-white">
         <div className="container mx-auto text-center px-4">
-          <h3 className="text-3xl font-bold mb-10 text-black">Why Proof of Audience?</h3>
+          <h3 className="text-3xl font-bold mb-10 text-black">Why Ad Game?</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-100 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-black">
               <h4 className="text-2xl font-bold mb-4">Powered by Worldcoin</h4>
@@ -105,7 +105,7 @@ export default function LandingPage() {
       {/* Footer Section */}
       <footer className="bg-gray-900 text-white py-6">
         <div className="container mx-auto text-center px-4">
-          <p>&copy; 2024 Proof of Audience. All rights reserved.</p>
+          <p>&copy; 2024 Ad Game. All rights reserved.</p>
           <nav className="mt-4">
             <ul className="flex justify-center space-x-4">
               <li><a href="#features" className="hover:underline">Features</a></li>

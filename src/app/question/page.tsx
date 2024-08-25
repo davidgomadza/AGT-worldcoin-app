@@ -7,8 +7,11 @@ const Quiz: React.FC = () => {
   const router = useRouter();
 
   const handleSelection = (choice: string) => {
-    // You can add logic here to handle the user's choice before navigating
-    router.push(`/win`);
+    if (choice === 'Maligno Torres') {
+      router.push(`/win`);
+    } else {
+      router.push(`/wrong`);
+    }
   };
 
   return (
@@ -37,6 +40,3 @@ const Quiz: React.FC = () => {
 };
 
 export default Quiz;
-
-
-
