@@ -42,7 +42,7 @@ export default function LandingPage() {
           <p className=" text-2xl mb-8 max-w-lg text-white">
             Empower your brand with Worldcoin's cutting-edge identity verification technology to ensure your marketing efforts reach real, verified individuals.
           </p>
-          <button onClick={handleContactClick} className="btn btn-primary btn-lg rounded-full bg-gradient-to-r from-blue-500 to-teal-400 hover:bg-blue-600 transition-all">
+          <button onClick={handleContactClick} className="btn btn-primary btn-lg rounded-full bg-gradient-to-r from-blue-500 to-teal-400">
             Contact Us
           </button>
         </div>
@@ -118,24 +118,21 @@ export default function LandingPage() {
 
       {/* Modal for Contact Information */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 ">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full justify-center flex flex-col items-center">
             <h3 id="contact" className="text-2xl font-bold mb-4 text-black">Reach Out to Us</h3>
             <p className="text-lg mb-6 text-gray-700">
               We would love to hear from you! Reach out to us through any of the following channels:
             </p>
-            <div className="flex flex-col items-start space-y-4">
-              <a href="mailto:your-email@example.com" className="text-lg hover:underline text-black">
-                Email: your-email@example.com
+            <div className="flex flex-col items-start space-y-4">             
+              <a href="https://t.me/t0t0_eth" target="_blank" rel="noopener noreferrer" className="text-lg hover:underline text-black">
+                Telegram: @t0t0_eth
               </a>
-              <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer" className="text-lg hover:underline text-black">
-                Telegram: @yourtelegram
-              </a>
-              <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className="text-lg hover:underline text-black">
-                GitHub: github.com/yourgithub
+              <a href="https://github.com/Paul-Sizon/worldcoin-app" target="_blank" rel="noopener noreferrer" className="text-lg hover:underline text-black">
+                GitHub: https://github.com/Paul-Sizon/worldcoin-app
               </a>
             </div>
-            <button onClick={handleCloseModal} className="mt-6 btn btn-primary rounded-full bg-gradient-to-r from-blue-500 to-teal-400 hover:bg-blue-600 transition-all">
+            <button onClick={handleCloseModal} className="mt-6 btn btn-primary rounded-full bg-gradient-to-r from-blue-500 to-teal-400 max-w-20">
               Close
             </button>
           </div>
